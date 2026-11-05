@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NBA Bracket 27 | West vs East, winner takes the pot</title>
+  <meta name="description" content="Group playoff bracket for the 2027 NBA Playoffs: West on the left, East on the right, pick every series winner to the championship.">
+  <meta property="og:title" content="NBA Bracket 27">
+  <meta property="og:description" content="Group playoff bracket for the 2027 NBA Playoffs. Most correct series picks takes the pot.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Manrope:wght@400;600&display=swap">
+  <link rel="stylesheet" href="assets/site.css">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.siteReady)document.documentElement.classList.remove('js')},2500)</script>
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="index.html">NBA Bracket <span>27</span></a>
+  <nav class="site-nav" aria-label="Sections">
+    <a href="#tab-pick" data-tab="pick" aria-current="page">Bracket</a>
+    <a href="#tab-board" data-tab="board">Leaderboard</a>
+    <a href="#tab-rules" data-tab="rules">Rules</a>
+  </nav>
+</header>
+<main id="main">
+  <section class="hero reveal">
+    <p class="kicker">Group betting - 2027 NBA Playoffs</p>
+    <h1>West on the left, East on the right. <span class="accent">Winner takes the pot</span></h1>
+    <p class="support">Seeds are TBD until the play-in ends in mid-April 2027. Award picks live on the sister site: <a href="https://miguelbiacora2000-gif.github.io/nba-predictions-27/">NBA Picks 26-27</a>.</p>
+  </section>
+
+  <section class="tab active" id="tab-pick" aria-label="Fill your bracket">
+    <div class="panel reveal">
+      <label class="field-label" for="f-name">Your name</label>
+      <input id="f-name" placeholder="e.g. Gio" maxlength="30" autocomplete="off">
+      <p class="sub" style="margin-top:10px">Tap a team to win each series; it advances to the next round. Set the games with the select under each series. Seeds marked TBD get filled once the play-in ends.</p>
+    </div>
+
+    <div class="bracket-wrap reveal">
+      <div class="bracket" id="bracket"></div>
+    </div>
+
+    <button class="btn btn-cta" id="btn-copy" type="button">Copy my picks</button>
+    <button class="btn btn-ghost" id="btn-json" type="button">Copy as JSON (admin use)</button>
+    <p id="msg" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="tab" id="tab-board" aria-label="Leaderboard">
+    <div id="board"></div>
+  </section>
+
+  <section class="tab" id="tab-rules" aria-label="Rules and scoring">
+    <div class="panel reveal in-view">
+      <h2>How it works</h2>
+      <ol class="rules">
+        <li><strong>Seeds first.</strong> Once the play-in tournament ends (mid-April 2027), the real 1-8 seeds replace the TBD slots on this page.</li>
+        <li><strong>Picks lock before Game 1.</strong> Fill every series, copy the text, paste it in the group chat to Miguel before the first round tips off.</li>
+        <li><strong>Scoring is automatic.</strong> As series end, results go into the site and the leaderboard scores itself.</li>
+        <li><strong>Winner takes the pot.</strong> Most points wins. Tiebreak: correct champion, then correct Finals teams, then earliest submission.</li>
+      </ol>
+    </div>
+    <div class="panel reveal in-view">
+      <h2>Scoring</h2>
+      <table>
+        <tr><th>Round</th><th>Points per series</th></tr>
+        <tr><td>First round</td><td>5</td></tr>
+        <tr><td>Conference semifinals</td><td>8</td></tr>
+        <tr><td>Conference finals</td><td>12</td></tr>
+        <tr><td>NBA Finals</td><td>20</td></tr>
+        <tr><td>Exact series length (any round)</td><td>+2</td></tr>
+      </table>
+      <p class="sub" style="margin-top:10px">Max: 145 pts (15 series + every length exactly right). Award picks (MVP, DPOY, All-NBA, All-Defensive) are scored separately on <a href="https://miguelbiacora2000-gif.github.io/nba-predictions-27/">NBA Picks 26-27</a>.</p>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <p>NBA Bracket 27 · One entry per person · Hosted on GitHub Pages</p>
+</footer>
+<script src="seeds.js"></script>
+<script src="picks.js"></script>
+<script src="results.js"></script>
+</body>
+</html>
