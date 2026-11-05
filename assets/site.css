@@ -176,3 +176,5 @@ html.js .reveal.in-view { opacity: 1; transform: none;
   .round-label, .conf-tag { flex: 1 1 100%; }
   .series { flex: 1 1 160px; max-width: 260px; }
 }
+
+.site-header .brand, .site-header a[href*='index'], .site-header a:first-child { white-space: nowrap; }

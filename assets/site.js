@@ -15,7 +15,7 @@ const ROUNDS = {
 const SERIES = {}; // id -> {conf, roundKey, slots: [{seed, team}], next: [id, slotIdx]}
 function defSeries(id, conf, roundKey, seedA, seedB, next){
   SERIES[id] = { id, conf, roundKey, next,
-    slots: [ { seed: seedA, team: (S[conf] || {})[seedA] || 'TBD' }, { seed: seedB, team: (S[conf] || {})[seedB] || 'TBD' } ] };
+    slots: [ { seed: seedA, conf, team: (S[conf] || {})[seedA] || 'TBD' }, { seed: seedB, conf, team: (S[conf] || {})[seedB] || 'TBD' } ] };
   ROUNDS[roundKey].series.push(id);
 }
 WEST_R1.forEach(([id, a, b], i) => defSeries(id, 'west', 'W1', a, b, ['W2' + (i < 2 ? 1 : 2), i % 2]));
@@ -29,7 +29,7 @@ defSeries('E31', 'east', 'E3', null, null, ['F', 1]);
 defSeries('F', 'finals', 'F', null, null, null);
 
 const winners = {}, gamesSel = {};
-function slotLabel(s){ return s.team && s.team !== 'TBD' ? s.team : (s.seed ? '#' + s.seed : 'TBD'); }
+function slotLabel(s){ return s.team && s.team !== 'TBD' ? s.team : (s.seed ? (s.conf === 'west' ? 'West ' : s.conf === 'east' ? 'East ' : '') + '#' + s.seed : 'TBD'); }
 
 function buildBracket(){
   const root = document.getElementById('bracket');
